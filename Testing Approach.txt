@@ -1,0 +1,55 @@
+The testing approach in the provided code involves using TestCafe to automate the testing of the SDLMS (Student Digital Learning Management System) login functionality. The code is structured to cover various test scenarios, including successful and unsuccessful login attempts, validation of error messages, and cross-browser testing. 
+Here's an overview of the testing approach:
+
+1) Test Fixture and Page URL:
+
+The fixture function is used to define a test fixture named 'SDLMS Login'.
+The .page method specifies the URL of the login page of the application ('https://beta.deepthought.education/login').
+User Inputs:
+
+2) User inputs:
+
+The getUserInputs function uses the readline module to get the user's username and password from the command line.
+User inputs are obtained asynchronously and returned as a Promise.
+Login Function:
+
+3) Login Function:
+
+The login function is defined to automate the login process using the provided username and password.
+It simulates typing the username and password, and then clicking the login button.
+Automate Login Test:
+
+4) Automating the login:
+
+A test.before hook is used to obtain user inputs and store them in the test context before executing the test.
+The test titled 'Automate login with user-provided credentials' uses the stored credentials to perform the login.
+It checks whether the dashboard element or error message element exists after the login attempt.
+Depending on the existence of elements, appropriate success or failure messages are logged.
+
+5) Test Successful Login: 
+
+The test titled 'Test successful login with valid credentials' obtains user inputs again and stores the dashboard element selector.
+The existence of the dashboard element before login is logged for reference.
+The login process is executed using stored credentials, and an assertion is made that the dashboard element exists (indicating a successful login).
+
+6) Test unsuccessful Login:
+
+The test titled 'Test unsuccessful login attempts with invalid credentials' attempts login using stored credentials.
+An assertion is made that the error message element exists (indicating a failed login).
+
+7) Validating Error Mesages:
+
+The test titled 'Validate appropriate error messages for invalid login attempts' performs the login and asserts the existence of the error message element.
+Another assertion checks that the error message content matches the expected 'Invalid username or password'.
+
+8) Redirection Validation:
+
+The test titled 'On successful login, validate redirection to the dashboard screen' performs the login and asserts the existence of the dashboard element.
+
+9)Cross-Browser Testing:
+
+The ClientFunction getUrl is defined to get the current browser URL.
+An array browsers is defined to specify browsers for cross-browser testing (e.g., 'chrome' and 'firefox').
+A forEach loop iterates through each browser, executing a test with the provided page URL.
+Inside the test, user inputs are obtained for each browser, and the login is attempted using adminRole.
+An assertion is made that the dashboard element exists after the login.
