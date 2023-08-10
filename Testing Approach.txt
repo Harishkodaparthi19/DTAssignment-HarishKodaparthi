@@ -53,3 +53,5 @@ An array browsers is defined to specify browsers for cross-browser testing (e.g.
 A forEach loop iterates through each browser, executing a test with the provided page URL.
 Inside the test, user inputs are obtained for each browser, and the login is attempted using adminRole.
 An assertion is made that the dashboard element exists after the login.
+
+The challenges I have faced during this assignment is automating the inputs for the user. As testcafe tool is more iteratively taking the inputs from the usesr. I have faced difficulty during checking with the input for the each testcase separately. As testcafe was not reliable on performing the testing in one go for different testcases.
